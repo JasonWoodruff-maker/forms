@@ -1,0 +1,18 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Age</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="{%static "style.css" %}">
+    </head>
+    <body>
+        <form action="{%url 'age1' %}" method="GET">
+            {{form.as_p}}
+
+        <button>Submit</button>
+            <h1>{{total}}</h1>
+    </body>
+</html>
