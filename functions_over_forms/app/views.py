@@ -25,28 +25,28 @@ def no_teen_sum(request):
     form = NoTeenSum(request.GET)
 
     if form.is_valid():
-        user_int_1 = form.cleaned_data["integer_1"]
-        user_int_2 = form.cleaned_data["integer_2"]
-        user_int_3 = form.cleaned_data["integer_3"]
+        user1 = form.cleaned_data["int_1"]
+        user2 = form.cleaned_data["int_2"]
+        user3 = form.cleaned_data["int_3"]
 
         final_sum = 0
 
-        if user_int_1 in range(13, 20):
-            user_int_1 = 0
+        if user1 in range(13, 20):
+            user1 = 0
             
-        if user_int_2 in range(13, 20):
-            user_int_2 = 0
+        if user2 in range(13, 20):
+            user2 = 0
             
-        if user_int_3 in range(13, 20):
-            user_int_3 = 0
+        if user3 in range(13, 20):
+            user = 0
         
-        final_sum = user_int_1 + user_int_2 + user_int_3
+        final_sum = user1 + user2 + user3
 
         return render(request, "noteensum.html", {'form': form, 'final_sum': final_sum})
     else:
-        user_int_1 = None
-        user_int_2 = None
-        user_int_3 = None
+        user1 = None
+        user2 = None
+        user3 = None
         final_sum = None
 
         return render(request, "noteensum.html", {"form": form})
@@ -79,21 +79,21 @@ def centered_average(request):
     if form.is_valid():
         # Initialize the user list with the given values, ensuring no None values are included
         user_list = [
-            form.cleaned_data["given_amount_1"],
-            form.cleaned_data["given_amount_2"],
-            form.cleaned_data["given_amount_3"],
-            form.cleaned_data["given_amount_4"],
-            form.cleaned_data["given_amount_5"],
+            form.cleaned_data["amount_1"],
+            form.cleaned_data["amount_2"],
+            form.cleaned_data["amount_3"],
+            form.cleaned_data["amount_4"],
+            form.cleaned_data["amount_5"],
         ]
 
         # Append the 6th and 7th values only if they are not None or empty
-        given_amount_6 = form.cleaned_data["given_amount_6"]
-        given_amount_7 = form.cleaned_data["given_amount_7"]
+        given_amount_6 = form.cleaned_data["amount_6"]
+        given_amount_7 = form.cleaned_data["amount_7"]
 
-        if given_amount_6 is not None and given_amount_6 != '':
-            user_list.append(given_amount_6)
-        if given_amount_7 is not None and given_amount_7 != '':
-            user_list.append(given_amount_7)
+        if amount_6 is not None and amount_6 != '':
+            user_list.append(amount_6)
+        if amount_7 is not None and amount_7 != '':
+            user_list.append(amount_7)
 
         if len(user_list) > 2:
             
