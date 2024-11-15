@@ -87,8 +87,8 @@ def centered_average(request):
         ]
 
         # Append the 6th and 7th values only if they are not None or empty
-        given_amount_6 = form.cleaned_data["amount_6"]
-        given_amount_7 = form.cleaned_data["amount_7"]
+        amount_6 = form.cleaned_data["amount_6"]
+        amount_7 = form.cleaned_data["amount_7"]
 
         if amount_6 is not None and amount_6 != '':
             user_list.append(amount_6)
